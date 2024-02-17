@@ -12,10 +12,8 @@ public class Scripture
         _words = new List<Word>();
         _random = new Random();
 
-        // Split text into words
         string[] wordArray = text.Split(' ');
 
-        // Create Word objects for each word in the scripture
         foreach (string word in wordArray)
         {
             _words.Add(new Word(word));
@@ -39,15 +37,15 @@ public class Scripture
         {
             if (wordCount >= 15)
             {
-                Console.WriteLine(); // Add line break after 15 words
-                wordCount = 0; // Reset word count for the new line
+                Console.WriteLine();
+                wordCount = 0;
             }
 
             Console.Write(word.Hidden ? "***** " : word.Text + " ");
             wordCount++;
         }
 
-        Console.WriteLine(); // Add a line break at the end
+        Console.WriteLine();
     }
 
     public void HideRandomWord()
